@@ -42,6 +42,7 @@ Available operations and tasks:
         sdl2-image
         vorbis
         zlib
+        freetype
 
 It is also possible to build native_optimizer manually by using CMake. To
 do that, run
@@ -148,6 +149,8 @@ if operation == 'build':
       build_port('sdl2', 'libsdl2.bc', ['-s', 'USE_SDL=2'])
     elif what == 'sdl2-image':
       build_port('sdl2-image', 'libsdl2_image.bc', ['-s', 'USE_SDL=2', '-s', 'USE_SDL_IMAGE=2'])
+    elif what == 'freetype':
+      build_port('freetype', 'libfreetype.a', ['-s', 'USE_FREETYPE=1'])
     else:
       shared.logging.error('unfamiliar build target: ' + what)
       sys.exit(1)
